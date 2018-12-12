@@ -12,6 +12,12 @@ package clase17;
 public class Avion implements IVolable{
     public String modelo;
 
+    static {
+    
+        System.out.println("Hola avion");
+    }
+    
+    
     @Override
     public void volar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
