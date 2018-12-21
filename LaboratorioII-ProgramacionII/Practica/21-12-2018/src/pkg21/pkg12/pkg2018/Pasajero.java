@@ -20,6 +20,10 @@ public class Pasajero {
     private String _nombre;
     private String _dni;
     private Boolean _esPlus;
+
+    public Boolean getEsPlus() {
+        return _esPlus;
+    }
     
     /*Realizar un constructor parametrizado que permita inicializar todos los 
     atributos de la clase llamando a otras dos sobrecargas. No se deberá repetir código.*/
