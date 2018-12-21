@@ -11,4 +11,24 @@ package pkg21.pkg12.pkg2018;
  */
 public class Pasajero {
     
+    private String _apellido;
+    private String _nombre;
+    private String _dni;
+    private Boolean _esPlus;
+    
+    public Pasajero(){
+    }
+    
+    public Pasajero(String ape, String nom){
+        this();
+        this._apellido = ape;
+        this._nombre = nom;
+    }
+    
+    public Pasajero(String ape, String nom, String dni, Boolean esPl){
+        this(ape,nom);
+        this._dni = dni;
+        this._esPlus = esPl;
+    }
+    
 }
