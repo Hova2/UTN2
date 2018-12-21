@@ -55,9 +55,27 @@ public class Pasajero {
     del pasajero y la retornará. Utilizar StringBuilder.*/
     
     public String getInfo(){
+        
         StringBuilder sb=new StringBuilder();
-        sb.append(super.mostrar()).append("\n");
+        sb.append("- Pasajero -").append("\n");
+        sb.append("------------").append("\n");
+        sb.append("Nombre: ").append(this._nombre).append("\n");
+        sb.append("Apellido: ").append(this._apellido).append("\n");
+        sb.append("DNI: ").append(this._dni).append("\n");
+        if(this._esPlus){
+            sb.append("Es plus: ").append("Si").append("\n");
+        }else{
+            sb.append("Es plus: ").append("No").append("\n");
+        }
+        sb.append("------------").append("\n").append("\n");
     
+        return sb.toString();
     }
     
+    
+    /*El método MostrarPasajero recibirá un pasajero y mostrará por consola toda su información.*/
+    
+    public static void mostrarPasajero(Pasajero pas){
+        System.out.print(pas.getInfo());
+    }
 }
