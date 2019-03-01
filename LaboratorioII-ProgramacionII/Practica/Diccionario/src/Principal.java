@@ -1,3 +1,7 @@
+
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +19,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+      
     }
 
     /**
@@ -53,7 +58,8 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        jLabel6.setVisible(false);        
+        jLabel6.setVisible(false);
+        
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
