@@ -6,6 +6,8 @@
 package Vista;
 
 import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 
 
@@ -14,13 +16,14 @@ import javax.swing.JLabel;
  *
  * @author iguglielmone_mecon
  */
-public class Principal extends javax.swing.JFrame {
+public class Principal extends javax.swing.JFrame{
 
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
+        
     }
 
     /**
@@ -31,7 +34,6 @@ public class Principal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -81,17 +83,9 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Andes", 1, 80)); // NOI18N
         jLabel1.setText("a");
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jPanel3, org.jdesktop.beansbinding.ObjectProperty.create(), jLabel1, org.jdesktop.beansbinding.BeanProperty.create("focusable"));
-        bindingGroup.addBinding(binding);
 
         jLabel2.setFont(new java.awt.Font("Andes", 1, 80)); // NOI18N
         jLabel2.setText("b");
@@ -181,6 +175,18 @@ public class Principal extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Andes", 1, 80)); // NOI18N
         jLabel26.setText("z");
         jLabel26.setToolTipText("");
+
+        jLabel1.addMouseListener(miMA);
+        jLabel2.addMouseListener(miMA);
+        jLabel3.addMouseListener(miMA);
+        jLabel4.addMouseListener(miMA);
+        jLabel5.addMouseListener(miMA);
+        jLabel6.addMouseListener(miMA);
+        jLabel7.addMouseListener(miMA);
+        jLabel8.addMouseListener(miMA);
+        jLabel9.addMouseListener(miMA);
+        jLabel10.addMouseListener(miMA);
+        jLabel11.addMouseListener(miMA);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -275,6 +281,8 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        jLabel12.addMouseListener(miMA);
+
         jPanel4.setBackground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -311,21 +319,23 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        bindingGroup.bind();
-
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
-        Component etiqueta = this.getFocusOwner();
-        if(etiqueta instanceof JLabel){
-            ((JLabel)etiqueta).setEnabled(false);
-        }
-    }//GEN-LAST:event_jPanel3MouseClicked
-
     
-
+    // Mis variables
+    MouseAdapter miMA = new MouseAdapter() {
+        
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JLabel jLabel = (JLabel)e.getSource();
+            jLabel.setEnabled(false);
+            //System.out.println("HOla"); 
+        }
+    };  
+   
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -357,6 +367,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
+
 }
