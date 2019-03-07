@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Controlador;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -37,6 +38,7 @@ public class Principal extends javax.swing.JFrame{
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -68,19 +70,25 @@ public class Principal extends javax.swing.JFrame{
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 51));
+
+        jLabel27.setFont(new java.awt.Font("Andes", 1, 80)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
+
+        jLabel27.setText(controlador.obtenerMascara());
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
 
@@ -282,6 +290,20 @@ public class Principal extends javax.swing.JFrame{
         );
 
         jLabel12.addMouseListener(miMA);
+        jLabel13.addMouseListener(miMA);
+        jLabel14.addMouseListener(miMA);
+        jLabel15.addMouseListener(miMA);
+        jLabel16.addMouseListener(miMA);
+        jLabel17.addMouseListener(miMA);
+        jLabel18.addMouseListener(miMA);
+        jLabel19.addMouseListener(miMA);
+        jLabel20.addMouseListener(miMA);
+        jLabel21.addMouseListener(miMA);
+        jLabel22.addMouseListener(miMA);
+        jLabel23.addMouseListener(miMA);
+        jLabel24.addMouseListener(miMA);
+        jLabel25.addMouseListener(miMA);
+        jLabel26.addMouseListener(miMA);
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 255));
 
@@ -330,10 +352,13 @@ public class Principal extends javax.swing.JFrame{
         @Override
         public void mouseClicked(MouseEvent e) {
             JLabel jLabel = (JLabel)e.getSource();
+            jLabel27.setText(controlador.obtenerMascaraLestra(jLabel.getText().charAt(0)));
             jLabel.setEnabled(false);
-            //System.out.println("HOla"); 
+            jLabel.removeMouseListener(this);
         }
-    };  
+    }; 
+    
+    private Controlador controlador = new Controlador();
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -356,6 +381,7 @@ public class Principal extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

@@ -19,7 +19,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,43,0,0,4,83"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,43,0,0,4,91"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -67,15 +67,28 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="jLabel27" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                  <Component id="jLabel27" alignment="0" pref="100" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel27">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Andes" size="80" style="1"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel27.setText(controlador.obtenerMascara());"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Properties>
@@ -322,6 +335,9 @@
                 <Property name="text" type="java.lang.String" value="m"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel13.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
               <Properties>
@@ -331,6 +347,9 @@
                 <Property name="text" type="java.lang.String" value="n"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel14.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
@@ -340,6 +359,9 @@
                 <Property name="text" type="java.lang.String" value="o"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel15.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
@@ -349,6 +371,9 @@
                 <Property name="text" type="java.lang.String" value="p"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel16.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
@@ -358,6 +383,9 @@
                 <Property name="text" type="java.lang.String" value="q"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel17.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
@@ -367,6 +395,9 @@
                 <Property name="text" type="java.lang.String" value="r"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel18.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
               <Properties>
@@ -376,6 +407,9 @@
                 <Property name="text" type="java.lang.String" value="s"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel19.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
@@ -385,6 +419,9 @@
                 <Property name="text" type="java.lang.String" value="t"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel20.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
@@ -394,6 +431,9 @@
                 <Property name="text" type="java.lang.String" value="u"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel21.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
@@ -403,6 +443,9 @@
                 <Property name="text" type="java.lang.String" value="v"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel22.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
@@ -412,6 +455,9 @@
                 <Property name="text" type="java.lang.String" value="w"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel23.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel24">
               <Properties>
@@ -421,6 +467,9 @@
                 <Property name="text" type="java.lang.String" value="x"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel24.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
@@ -430,6 +479,9 @@
                 <Property name="text" type="java.lang.String" value="y"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel25.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel26">
               <Properties>
@@ -439,6 +491,9 @@
                 <Property name="text" type="java.lang.String" value="z"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="jLabel26.addMouseListener(miMA);"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
