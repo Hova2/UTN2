@@ -24,4 +24,12 @@ public class Controlador {
         juego.procesarLetra(c);
         return juego.getMascara();
        }
+    
+    public int obtenerIntentos(){
+        return juego.getIntentos();
+    }
+    
+    public int obtenerAcientos(){
+        return juego.getAciertos();
+    }
 }

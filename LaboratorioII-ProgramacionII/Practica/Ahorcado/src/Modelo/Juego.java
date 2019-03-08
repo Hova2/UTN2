@@ -11,7 +11,7 @@ package Modelo;
  */
 public class Juego {
     
-    private int intentos = 9;
+    private int intentos = 7;
     private int aciertos;
     private String palabra;
     private String mascara;
@@ -23,6 +23,7 @@ public class Juego {
             sb.append("?");
         }
         this.mascara=sb.toString();
+        this.aciertos=palabra.length();
     }
 
     public int getIntentos() {
@@ -47,14 +48,17 @@ public class Juego {
     
     public void procesarLetra(char letra){
         
-        StringBuilder sb = new StringBuilder(this.mascara);
-        
-        for (int i=0; i<this.palabra.length(); i++) {
-            if (this.palabra.charAt(i)==letra) {
-                sb.setCharAt(i, letra);
+        if(this.palabra.indexOf(letra)!=-1){
+            StringBuilder sb = new StringBuilder(this.mascara);
+            for (int i=0; i<this.palabra.length(); i++) {
+                if (this.palabra.charAt(i)==letra) {
+                    sb.setCharAt(i, letra);
+                    this.aciertos--;
+                }
             }
+            this.mascara=sb.toString();
+        }else{
+            this.intentos--;
         }
-        
-        this.mascara=sb.toString();
     }
 }
