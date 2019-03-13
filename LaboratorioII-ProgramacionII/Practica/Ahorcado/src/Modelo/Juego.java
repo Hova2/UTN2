@@ -20,7 +20,7 @@ public class Juego {
         this.palabra = palabra;
         StringBuilder sb = new StringBuilder();
         for(int i=0;i<this.palabra.length();i++){
-            sb.append("?");
+            sb.append("-");
         }
         this.mascara=sb.toString();
         this.aciertos=palabra.length();
