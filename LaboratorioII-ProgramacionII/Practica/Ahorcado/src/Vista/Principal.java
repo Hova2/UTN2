@@ -165,7 +165,6 @@ public class Principal extends javax.swing.JFrame{
         jLabel14.setToolTipText("");
 
         jLabel15.setFont(new java.awt.Font("Andes", 1, 61)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 51, 51));
         jLabel15.setText("o");
         jLabel15.setToolTipText("");
 
@@ -352,7 +351,6 @@ public class Principal extends javax.swing.JFrame{
         jPanel7.setOpaque(false);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/0.png"))); // NOI18N
-        jLabel28.setPreferredSize(new java.awt.Dimension(478, 500));
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -412,7 +410,6 @@ public class Principal extends javax.swing.JFrame{
         );
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/fondo.jpg"))); // NOI18N
-        jLabel29.setPreferredSize(new java.awt.Dimension(1153, 662));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -453,7 +450,7 @@ public class Principal extends javax.swing.JFrame{
                 .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel29)
                     .addGap(0, 80, Short.MAX_VALUE)))
         );
 
