@@ -6,6 +6,9 @@
 package Controlador;
 
 import Modelo.Juego;
+import Modelo.Palabra;
+import Utilidades.SerializadorYDeserializadorXML;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,8 +16,20 @@ import Modelo.Juego;
  */
 public class Controlador {
  
-    
+    private static Controlador instancia;
     private Juego juego = new Juego("batman");
+    private ArrayList<Palabra> listPalabra;
+    
+    private Controlador() {
+        //this.listPalabra = SerializadorYDeserializadorXML.getInstancia().deserializarPalabras();
+    }
+    
+    public static Controlador getInstancia(){
+        if(instancia == null){
+            instancia = new Controlador();
+        }
+        return instancia;
+    }
     
     public String obtenerMascara(){
         return juego.getMascara();

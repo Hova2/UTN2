@@ -95,19 +95,21 @@ public class Principal extends javax.swing.JFrame{
         jPanel1.setPreferredSize(new java.awt.Dimension(1153, 662));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setOpaque(false);
         jPanel2.setPreferredSize(new java.awt.Dimension(1112, 100));
 
         jLabel27.setBackground(new java.awt.Color(0, 0, 0));
         jLabel27.setFont(new java.awt.Font("Andes", 1, 61)); // NOI18N
         jLabel27.setForeground(java.awt.Color.yellow);
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setOpaque(true);
         jLabel27.setPreferredSize(new java.awt.Dimension(1112, 100));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 1112, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -506,7 +508,7 @@ public class Principal extends javax.swing.JFrame{
         }
     }; 
     
-    private Controlador controlador = new Controlador();
+    private Controlador controlador = Controlador.getInstancia();
     private ArrayList<String> imagenes = new ArrayList<>();
     
     // Mis metodos
