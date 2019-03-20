@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_201" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="Modelo.PalabraFacil">
+    <void property="ayuda">
+     <string>Facil</string>
+    </void>
+    <void property="termino">
+     <string>pruebafacil</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Modelo.PalabraNormal">
+    <void property="ayuda">
+     <string>normal</string>
+    </void>
+    <void property="termino">
+     <string>pruebanormal</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Modelo.PalabraDificil">
+    <void property="ayuda">
+     <string>dificil</string>
+    </void>
+    <void property="termino">
+     <string>pruebadificil</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

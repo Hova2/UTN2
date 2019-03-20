@@ -13,17 +13,17 @@ public class Juego {
     
     private int intentos = 7;
     private int aciertos;
-    private String palabra;
+    private Palabra palabra;
     private String mascara;
 
-    public Juego(String palabra) {
+    public Juego(Palabra palabra) {
         this.palabra = palabra;
         StringBuilder sb = new StringBuilder();
-        for(int i=0;i<this.palabra.length();i++){
+        for(int i=0;i<this.palabra.getTermino().length();i++){
             sb.append("-");
         }
         this.mascara=sb.toString();
-        this.aciertos=palabra.length();
+        this.aciertos=palabra.getTermino().length();
     }
 
     public int getIntentos() {
@@ -48,10 +48,10 @@ public class Juego {
     
     public void procesarLetra(char letra){
         
-        if(this.palabra.indexOf(letra)!=-1){
+        if(this.palabra.getTermino().indexOf(letra)!=-1){
             StringBuilder sb = new StringBuilder(this.mascara);
-            for (int i=0; i<this.palabra.length(); i++) {
-                if (this.palabra.charAt(i)==letra) {
+            for (int i=0; i<this.palabra.getTermino().length(); i++) {
+                if (this.palabra.getTermino().charAt(i)==letra) {
                     sb.setCharAt(i, letra);
                     this.aciertos--;
                 }

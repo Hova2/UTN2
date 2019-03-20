@@ -7,6 +7,9 @@ package Controlador;
 
 import Modelo.Juego;
 import Modelo.Palabra;
+import Modelo.PalabraDificil;
+import Modelo.PalabraFacil;
+import Modelo.PalabraNormal;
 import Utilidades.SerializadorYDeserializadorXML;
 import java.util.ArrayList;
 
@@ -17,11 +20,12 @@ import java.util.ArrayList;
 public class Controlador {
  
     private static Controlador instancia;
-    private Juego juego = new Juego("batman");
+    private Juego juego;
+    private SerializadorYDeserializadorXML SYD = SerializadorYDeserializadorXML.getInstancia();
     private ArrayList<Palabra> listPalabra;
     
     private Controlador() {
-        //this.listPalabra = SerializadorYDeserializadorXML.getInstancia().deserializarPalabras();
+        this.listPalabra = SerializadorYDeserializadorXML.getInstancia().deserializarPalabras();
     }
     
     public static Controlador getInstancia(){
@@ -30,6 +34,10 @@ public class Controlador {
         }
         return instancia;
     }
+    
+    public void inicializarJuego(){
+        juego = new Juego(this.listPalabra.get(2));
+    };
     
     public String obtenerMascara(){
         return juego.getMascara();
@@ -46,5 +54,22 @@ public class Controlador {
     
     public int obtenerAcientos(){
         return juego.getAciertos();
+    }
+    
+    public void agregarPalabra(String termino, String ayuda, int dificultad){
+        Palabra palabra = null;
+        switch(dificultad){
+            case 0:
+                palabra = new PalabraFacil(termino, ayuda);
+                break;
+            case 1:
+                palabra = new PalabraNormal(termino, ayuda);
+                break;
+            case 2:
+                palabra = new PalabraDificil(termino, ayuda);
+                break;
+        }
+        this.listPalabra.add(palabra);
+        SYD.serializarPalabras(this.listPalabra);
     }
 }

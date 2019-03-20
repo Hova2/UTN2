@@ -35,6 +35,7 @@ public class Principal extends javax.swing.JFrame{
         this.imagenes.add(4, "/Utilidades/3.png");
         this.imagenes.add(5, "/Utilidades/2.png");
         this.imagenes.add(6, "/Utilidades/1.png");
+        controlador.inicializarJuego();
         initComponents();
     }
 
@@ -119,7 +120,6 @@ public class Principal extends javax.swing.JFrame{
         jLabel27.setText(controlador.obtenerMascara());
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
-        jPanel3.setOpaque(false);
         jPanel3.setPreferredSize(new java.awt.Dimension(1049, 50));
 
         jLabel1.setFont(new java.awt.Font("Andes", 1, 61)); // NOI18N
@@ -335,7 +335,6 @@ public class Principal extends javax.swing.JFrame{
         jLabel26.addMouseListener(miMA);
 
         jPanel4.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel4.setOpaque(false);
         jPanel4.setPreferredSize(new java.awt.Dimension(316, 500));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -350,7 +349,6 @@ public class Principal extends javax.swing.JFrame{
         );
 
         jPanel7.setBackground(new java.awt.Color(51, 255, 0));
-        jPanel7.setOpaque(false);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/0.png"))); // NOI18N
 
@@ -366,7 +364,6 @@ public class Principal extends javax.swing.JFrame{
         );
 
         jPanel9.setBackground(new java.awt.Color(0, 255, 255));
-        jPanel9.setOpaque(false);
         jPanel9.setPreferredSize(new java.awt.Dimension(1115, 50));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -381,7 +378,6 @@ public class Principal extends javax.swing.JFrame{
         );
 
         jPanel8.setBackground(new java.awt.Color(153, 153, 255));
-        jPanel8.setOpaque(false);
         jPanel8.setPreferredSize(new java.awt.Dimension(389, 500));
 
         jLabel30.setFont(new java.awt.Font("Andes", 1, 75)); // NOI18N
@@ -407,8 +403,7 @@ public class Principal extends javax.swing.JFrame{
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE))
         );
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/fondo.jpg"))); // NOI18N

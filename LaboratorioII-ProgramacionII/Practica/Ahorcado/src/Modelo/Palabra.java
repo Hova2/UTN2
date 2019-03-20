@@ -9,17 +9,19 @@ package Modelo;
  *
  * @author iguglielmone_mecon
  */
-public class Palabra {
+public abstract class  Palabra {
     
     private String termino;
     private String ayuda;
+    private int dificulad;
 
     public Palabra() {
     }
 
-    public Palabra(String termino, String ayuda) {
+    public Palabra(String termino, String ayuda, int dificultad) {
         this.termino = termino;
         this.ayuda = ayuda;
+        this.dificulad = dificultad;
     }
 
     public String getTermino() {
@@ -36,5 +38,9 @@ public class Palabra {
 
     public void setAyuda(String ayuda) {
         this.ayuda = ayuda;
+    }
+
+    public int getDificulad() {
+        return dificulad;
     }
 }
