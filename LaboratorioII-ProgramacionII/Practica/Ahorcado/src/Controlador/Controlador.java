@@ -35,8 +35,33 @@ public class Controlador {
         return instancia;
     }
     
-    public void inicializarJuego(){
-        juego = new Juego(this.listPalabra.get(2));
+    public void inicializarJuego(int dificultad){
+        ArrayList<Palabra> list = new ArrayList<>();
+        for(int i=0; i<listPalabra.size();i++){
+            
+            switch(dificultad){
+                case 0:
+                    if(listPalabra.get(i) instanceof PalabraFacil){
+                        list.add(listPalabra.get(i));
+                    }
+                    break;
+                case 1:
+                    if(listPalabra.get(i) instanceof PalabraNormal){
+                        list.add(listPalabra.get(i));
+                    }
+                    break;
+                case 2:
+                    if(listPalabra.get(i) instanceof PalabraDificil){
+                        list.add(listPalabra.get(i));
+                    }
+                    break;    
+            }
+                    
+                
+        }
+    
+        int num = (int) (Math.random() * list.size());
+        juego = new Juego(list.get(num));
     };
     
     public String obtenerMascara(){
@@ -47,6 +72,10 @@ public class Controlador {
         juego.procesarLetra(c);
         return juego.getMascara();
        }
+    
+    public String obteneAyuda(){
+        return juego.getPalabra().getAyuda();
+    }
     
     public int obtenerIntentos(){
         return juego.getIntentos();

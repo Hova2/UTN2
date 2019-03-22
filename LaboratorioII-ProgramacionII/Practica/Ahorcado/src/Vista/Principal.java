@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 
 
@@ -27,7 +28,7 @@ public class Principal extends javax.swing.JFrame{
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public Principal(int dificultad) {
         this.imagenes.add(0, "/Utilidades/7.png");
         this.imagenes.add(1, "/Utilidades/6.png");
         this.imagenes.add(2, "/Utilidades/5.png");
@@ -35,8 +36,10 @@ public class Principal extends javax.swing.JFrame{
         this.imagenes.add(4, "/Utilidades/3.png");
         this.imagenes.add(5, "/Utilidades/2.png");
         this.imagenes.add(6, "/Utilidades/1.png");
-        controlador.inicializarJuego();
+        controlador.inicializarJuego(dificultad);
         initComponents();
+        misInit();
+        this.dificultad = dificultad;
     }
 
     /**
@@ -48,6 +51,7 @@ public class Principal extends javax.swing.JFrame{
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -80,12 +84,16 @@ public class Principal extends javax.swing.JFrame{
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,6 +128,7 @@ public class Principal extends javax.swing.JFrame{
         jLabel27.setText(controlador.obtenerMascara());
 
         jPanel3.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel3.setOpaque(false);
         jPanel3.setPreferredSize(new java.awt.Dimension(1049, 50));
 
         jLabel1.setFont(new java.awt.Font("Andes", 1, 61)); // NOI18N
@@ -335,20 +344,32 @@ public class Principal extends javax.swing.JFrame{
         jLabel26.addMouseListener(miMA);
 
         jPanel4.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel4.setOpaque(false);
         jPanel4.setPreferredSize(new java.awt.Dimension(316, 500));
+
+        jLabel31.setFont(new java.awt.Font("Andes", 1, 75)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel31.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 316, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
         );
 
         jPanel7.setBackground(new java.awt.Color(51, 255, 0));
+        jPanel7.setOpaque(false);
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/0.png"))); // NOI18N
 
@@ -364,46 +385,81 @@ public class Principal extends javax.swing.JFrame{
         );
 
         jPanel9.setBackground(new java.awt.Color(0, 255, 255));
+        jPanel9.setOpaque(false);
         jPanel9.setPreferredSize(new java.awt.Dimension(1115, 50));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        java.awt.GridBagLayout jPanel9Layout = new java.awt.GridBagLayout();
+        jPanel9Layout.columnWidths = new int[] {0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0};
+        jPanel9Layout.rowHeights = new int[] {0};
         jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1143, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
 
-        jPanel8.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel32.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel32.setText("rejugar");
+        jLabel32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel32MouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel9.add(jLabel32, gridBagConstraints);
+
+        jLabel33.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.setText("salir");
+        jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel33MouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 18;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel9.add(jLabel33, gridBagConstraints);
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel8.setOpaque(false);
         jPanel8.setPreferredSize(new java.awt.Dimension(389, 500));
 
+        jLabel30.setBackground(new java.awt.Color(0, 0, 0));
         jLabel30.setFont(new java.awt.Font("Andes", 1, 75)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 0));
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel30.setText("¡¡¡ayuda!!!");
 
-        jLabel31.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("jLabel31");
+        jScrollPane1.setBorder(null);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Andes", 1, 30)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 0));
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel31, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/fondo.jpg"))); // NOI18N
@@ -468,6 +524,16 @@ public class Principal extends javax.swing.JFrame{
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel33MouseClicked
+
+    private void jLabel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel32MouseClicked
+        Principal principal = new Principal(this.dificultad);
+        principal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel32MouseClicked
+
     
     
     // Mis variables
@@ -482,9 +548,17 @@ public class Principal extends javax.swing.JFrame{
             jLabel.removeMouseListener(this);
             if(controlador.obtenerAcientos()==0){
                 this.deshabilitarComponentes(jPanel3);
+                jLabel31.setText("¡¡¡ganaste!!!");
+                jLabel31.setVisible(true);
             }else if(controlador.obtenerIntentos()==0){
                 jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(0))));
+                jLabel31.setText("¡¡¡perdiste!!!");
+                jLabel31.setVisible(true);
                 this.deshabilitarComponentes(jPanel3);
+            }else if(controlador.obtenerIntentos()==2){
+                jLabel30.setVisible(true);
+                jScrollPane1.setVisible(true);
+                jPanel8.setOpaque(true);
             }else{
                 if(intentoAnterior != controlador.obtenerIntentos()){
                     jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource(imagenes.get(controlador.obtenerIntentos()))));
@@ -505,9 +579,16 @@ public class Principal extends javax.swing.JFrame{
     
     private Controlador controlador = Controlador.getInstancia();
     private ArrayList<String> imagenes = new ArrayList<>();
+    private int dificultad;
     
     // Mis metodos
     
+    private void misInit(){
+        jLabel30.setVisible(false);
+        jLabel30.setVisible(false);
+        jScrollPane1.setVisible(false);
+        jTextArea1.setText(controlador.obteneAyuda());
+    }
    
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -536,6 +617,8 @@ public class Principal extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -549,6 +632,8 @@ public class Principal extends javax.swing.JFrame{
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
 }

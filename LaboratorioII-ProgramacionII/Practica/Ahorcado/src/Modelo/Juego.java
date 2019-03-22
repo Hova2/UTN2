@@ -18,12 +18,20 @@ public class Juego {
 
     public Juego(Palabra palabra) {
         this.palabra = palabra;
+        this.aciertos=palabra.getTermino().length();
         StringBuilder sb = new StringBuilder();
         for(int i=0;i<this.palabra.getTermino().length();i++){
-            sb.append("-");
+            if(this.palabra.getTermino().charAt(i)==' '){
+                sb.append(" ");
+                this.aciertos--;
+            }else{
+                sb.append("-");
+            }
+            
+                
         }
         this.mascara=sb.toString();
-        this.aciertos=palabra.getTermino().length();
+        
     }
 
     public int getIntentos() {
@@ -44,6 +52,10 @@ public class Juego {
 
     public String getMascara() {
         return mascara;
+    }
+
+    public Palabra getPalabra() {
+        return palabra;
     }
     
     public void procesarLetra(char letra){
