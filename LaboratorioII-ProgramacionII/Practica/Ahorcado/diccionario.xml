@@ -93,5 +93,15 @@ salvar a su mujer</string>
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="Modelo.PalabraNormal">
+    <void property="ayuda">
+     <string>luego fue oraculo</string>
+    </void>
+    <void property="termino">
+     <string>bati chica</string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>
