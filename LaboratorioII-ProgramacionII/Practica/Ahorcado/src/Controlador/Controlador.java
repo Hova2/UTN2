@@ -21,11 +21,11 @@ public class Controlador {
  
     private static Controlador instancia;
     private Juego juego;
-    private SerializadorYDeserializadorXML SYD = SerializadorYDeserializadorXML.getInstancia();
-    private ArrayList<Palabra> listPalabra;
+    private SerializadorYDeserializadorXML SYDP = new SerializadorYDeserializadorXML("diccionario.xml");
+    private ArrayList<Object> listPalabra;
     
     private Controlador() {
-        this.listPalabra = SerializadorYDeserializadorXML.getInstancia().deserializarPalabras();
+        this.listPalabra = SYDP.desPersistir();
     }
     
     public static Controlador getInstancia(){
@@ -42,17 +42,17 @@ public class Controlador {
             switch(dificultad){
                 case 0:
                     if(listPalabra.get(i) instanceof PalabraFacil){
-                        list.add(listPalabra.get(i));
+                        list.add((PalabraFacil)listPalabra.get(i));
                     }
                     break;
                 case 1:
                     if(listPalabra.get(i) instanceof PalabraNormal){
-                        list.add(listPalabra.get(i));
+                        list.add((PalabraNormal)listPalabra.get(i));
                     }
                     break;
                 case 2:
                     if(listPalabra.get(i) instanceof PalabraDificil){
-                        list.add(listPalabra.get(i));
+                        list.add((PalabraDificil)listPalabra.get(i));
                     }
                     break;    
             }
@@ -99,6 +99,6 @@ public class Controlador {
                 break;
         }
         this.listPalabra.add(palabra);
-        SYD.serializarPalabras(this.listPalabra);
+        SYDP.persistir(this.listPalabra);
     }
 }

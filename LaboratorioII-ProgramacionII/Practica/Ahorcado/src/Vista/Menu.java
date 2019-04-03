@@ -24,10 +24,10 @@ public class Menu extends javax.swing.JFrame{
     public Menu() {
         initComponents();
         misInit();
-        rep = new Reproductor("Musica.wav");
-        this.pausa=false;
-        rep.play();
-        rep.loop();
+        //rep = new Reproductor("Musica.wav");
+        //this.pausa=false;
+        //rep.play();
+        //rep.loop();
     }
 
     /**
@@ -229,7 +229,7 @@ public class Menu extends javax.swing.JFrame{
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        rep.stop();
+       // rep.stop();
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
@@ -238,9 +238,6 @@ public class Menu extends javax.swing.JFrame{
         Font fuente = jL.getFont();
         Font nuevaFuente = new Font(fuente.getName(), Font.PLAIN, fuente.getSize()+10);
         jL.setFont(nuevaFuente);
-       
-
-   
     }//GEN-LAST:event_mouseSobre
 
     private void mouseNoSobre(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseNoSobre
@@ -248,16 +245,15 @@ public class Menu extends javax.swing.JFrame{
         Font fuente = jL.getFont();
         Font nuevaFuente = new Font(fuente.getName(), Font.PLAIN, fuente.getSize()-10);
         jL.setFont(nuevaFuente);
-    
     }//GEN-LAST:event_mouseNoSobre
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         if(pausa){
-            pausa=false;
-            rep.reanudar();
+            //pausa=false;
+            //rep.reanudar();
         }else{
-            pausa=true;
-            rep.pausa();
+            //pausa=true;
+            //rep.pausa();
         }
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -265,7 +261,7 @@ public class Menu extends javax.swing.JFrame{
     
     // Mis variables
     private Controlador controlador = Controlador.getInstancia();
-    private Reproductor rep;
+    //private Reproductor rep;
     private boolean pausa;
     
 

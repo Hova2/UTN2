@@ -5,15 +5,18 @@
  */
 package Utilidades;
 
-import Modelo.Palabra;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,44 +24,100 @@ import java.util.ArrayList;
  */
 public class SerializadorYDeserializadorXML {
     
-    private static final String ARCHIVO = "diccionario.xml";
-    private static SerializadorYDeserializadorXML instancia;
+    private final String archivo;
     private XMLEncoder encoder;
     private XMLDecoder decoder;
     
-    private SerializadorYDeserializadorXML() {
+    public SerializadorYDeserializadorXML(String archivo) {
+        this.archivo = archivo;
+    }
+            
+    public void persistir(ArrayList<Object> entidad){
+    
+        try {
+            this.persistirPrivado(entidad);
+        } catch (ArchivoNoEncontradoCE ex) {
+            try {
+                this.crearArchivo();
+            } catch (ArchivoNoCreadoCE ex1) {
+                Logger.getLogger(SerializadorYDeserializadorXML.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+            Logger.getLogger(SerializadorYDeserializadorXML.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
     }
     
-    public static SerializadorYDeserializadorXML getInstancia(){
-        if(instancia == null){
-            instancia = new SerializadorYDeserializadorXML();
+    public ArrayList<Object> desPersistir(){
+        try {
+            return this.desPersistirPrivado();
+        } catch (ArchivoNoEncontradoCE ex) {
+            try {
+                this.crearArchivo();
+            } catch (ArchivoNoCreadoCE ex1) {
+                Logger.getLogger(SerializadorYDeserializadorXML.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+            Logger.getLogger(SerializadorYDeserializadorXML.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ArraySinElementosCE ex){
+            Logger.getLogger(SerializadorYDeserializadorXML.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return instancia;
+        return null;
     }
     
-    public void serializarPalabras(ArrayList<Palabra> palabras) {
+    
+    
+    private void persistirPrivado(ArrayList<Object> entidad) throws ArchivoNoEncontradoCE{
         try {
-               FileOutputStream fos = new FileOutputStream(ARCHIVO);
-               BufferedOutputStream bos = new BufferedOutputStream(fos); 
-               this.encoder = new XMLEncoder(bos);
+                FileOutputStream fos = new FileOutputStream(archivo);
+                BufferedOutputStream bos = new BufferedOutputStream(fos); 
+                this.encoder = new XMLEncoder(bos);
+                encoder.writeObject(entidad);
+                encoder.close();
         } catch (FileNotFoundException fileNotFound) {
             System.out.println("ERROR: Archivo no encontrado");
         }
-        encoder.writeObject(palabras);
-        encoder.close();
     }
     
-    public ArrayList<Palabra> deserializarPalabras() {
+    private ArrayList<Object> desPersistirPrivado() throws ArchivoNoEncontradoCE,ArraySinElementosCE{
         try {
-            decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(ARCHIVO)));
-        } catch (FileNotFoundException e) {
-            System.out.println("ERROR: Archivo no encontrado");
+            FileInputStream fis = new FileInputStream(archivo);
+            BufferedInputStream bis = new BufferedInputStream(fis);
+            this.decoder = new XMLDecoder(bis);
+            ArrayList<Object> entidad = (ArrayList<Object>) decoder.readObject();
+            return entidad;
+        } catch (FileNotFoundException ex) {
+            throw new ArchivoNoEncontradoCE(this.mensajeArchivo(), ex);   
+        } catch (ArrayIndexOutOfBoundsException ex){
+            throw new ArraySinElementosCE(this.mensajeArreglo(), ex);
         }
         
-        ArrayList<Palabra> palabras = (ArrayList<Palabra>) decoder.readObject();
-
-        return palabras;
     }
     
+    private String mensajeArchivo(){
+        StringBuilder mensaje = new StringBuilder();
+        mensaje.append("El archivo de ");
+        mensaje.append(archivo);
+        mensaje.append(" no fue encontrado.");
+        mensaje.append(" Creando!!!!");
+        
+        return mensaje.toString();
+    }
+    
+    private String mensajeArreglo(){
+        StringBuilder mensaje = new StringBuilder();
+        mensaje.append("El archivo de ");
+        mensaje.append(archivo);
+        mensaje.append(" no contiene elementos.");
+        
+        return mensaje.toString();
+    }
+    
+    private void crearArchivo() throws ArchivoNoCreadoCE{
+        File arch = new File(archivo);
+        try {
+            arch.createNewFile();
+        } catch (IOException ex) {
+            throw new ArchivoNoCreadoCE("No se pudo creear el archivo!!!!", ex);
+        }
+    }
 }
