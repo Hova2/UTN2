@@ -6,18 +6,10 @@
 package Vista;
 
 import Controlador.Controlador;
+import Utilidades.Reproductor;
 import java.awt.Font;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
-import sun.audio.AudioData;
-import sun.audio.AudioDataStream;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
+
 
 
 /**
@@ -32,25 +24,10 @@ public class Menu extends javax.swing.JFrame{
     public Menu() {
         initComponents();
         misInit();
-        archivo = new File("Musica.wav");
-        try {
-            fis = new FileInputStream(archivo);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            as = new AudioStream(fis);
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        try {
-            theData = as.getData();
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        ads = new AudioDataStream(theData);
-        AudioPlayer.player.start(ads);
+        rep = new Reproductor("Musica.wav");
+        this.pausa=false;
+        rep.play();
+        rep.loop();
     }
 
     /**
@@ -74,6 +51,7 @@ public class Menu extends javax.swing.JFrame{
         jRadioButton3 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -191,6 +169,19 @@ public class Menu extends javax.swing.JFrame{
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jLabel4, gridBagConstraints);
 
+        jLabel5.setFont(new java.awt.Font("Andes", 0, 35)); // NOI18N
+        jLabel5.setText("pausa");
+        jLabel5.setToolTipText("");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(jLabel5, gridBagConstraints);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -238,6 +229,7 @@ public class Menu extends javax.swing.JFrame{
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        rep.stop();
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
@@ -259,15 +251,24 @@ public class Menu extends javax.swing.JFrame{
     
     }//GEN-LAST:event_mouseNoSobre
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        if(pausa){
+            pausa=false;
+            rep.reanudar();
+        }else{
+            pausa=true;
+            rep.pausa();
+        }
+    }//GEN-LAST:event_jLabel5MouseClicked
+
     
     
     // Mis variables
     private Controlador controlador = Controlador.getInstancia();
-    File archivo;
-    FileInputStream fis;
-    AudioStream as;
-    AudioData theData = null;
-    AudioDataStream ads;
+    private Reproductor rep;
+    private boolean pausa;
+    
+
     
     
     // Mis metodos
@@ -290,6 +291,7 @@ public class Menu extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
