@@ -81,6 +81,9 @@
                   <Font name="Andes" size="30" style="0"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="documentoJTF = (AbstractDocument) jTextField1.getDocument();&#xa;documentoJTF.setDocumentFilter(new FiltroLetras());"/>
+              </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
                   <GridBagConstraints gridX="2" gridY="0" gridWidth="1" gridHeight="1" fill="2" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
@@ -121,6 +124,9 @@
                     </Property>
                     <Property name="rows" type="int" value="5"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="documentoJTA = (AbstractDocument) jTextArea1.getDocument();&#xa;documentoJTA.setDocumentFilter(new FiltroLetrasNumeros());"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>

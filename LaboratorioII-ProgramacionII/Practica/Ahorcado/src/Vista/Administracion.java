@@ -6,7 +6,10 @@
 package Vista;
 
 import Controlador.Controlador;
+import Utilidades.FiltroLetras;
+import Utilidades.FiltroLetrasNumeros;
 import javafx.scene.control.RadioButton;
+import javax.swing.text.AbstractDocument;
 
 /**
  *
@@ -68,6 +71,8 @@ public class Administracion extends javax.swing.JFrame{
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jTextField1, gridBagConstraints);
+        documentoJTF = (AbstractDocument) jTextField1.getDocument();
+        documentoJTF.setDocumentFilter(new FiltroLetras());
 
         jLabel1.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -82,6 +87,8 @@ public class Administracion extends javax.swing.JFrame{
         jTextArea1.setFont(new java.awt.Font("Andes", 0, 30)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
+        documentoJTA = (AbstractDocument) jTextArea1.getDocument();
+        documentoJTA.setDocumentFilter(new FiltroLetrasNumeros());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -216,6 +223,8 @@ public class Administracion extends javax.swing.JFrame{
     
     
     private Controlador controlador = Controlador.getInstancia();
+    AbstractDocument documentoJTF;
+    AbstractDocument documentoJTA;
     
     // Mis metodos
     
