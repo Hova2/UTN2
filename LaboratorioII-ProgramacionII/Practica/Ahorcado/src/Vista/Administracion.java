@@ -70,7 +70,6 @@ public class Administracion extends javax.swing.JFrame{
         jPanel2.add(jTextField1, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Palabra");
         gridBagConstraints = new java.awt.GridBagConstraints();

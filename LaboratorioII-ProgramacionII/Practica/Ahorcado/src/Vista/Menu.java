@@ -6,7 +6,19 @@
 package Vista;
 
 import Controlador.Controlador;
-import javafx.scene.control.RadioButton;
+import java.awt.Font;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
+import sun.audio.AudioData;
+import sun.audio.AudioDataStream;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+
 
 /**
  *
@@ -20,6 +32,25 @@ public class Menu extends javax.swing.JFrame{
     public Menu() {
         initComponents();
         misInit();
+        archivo = new File("Musica.wav");
+        try {
+            fis = new FileInputStream(archivo);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            as = new AudioStream(fis);
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            theData = as.getData();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ads = new AudioDataStream(theData);
+        AudioPlayer.player.start(ads);
     }
 
     /**
@@ -66,6 +97,12 @@ public class Menu extends javax.swing.JFrame{
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mouseSobre(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mouseNoSobre(evt);
+            }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -74,12 +111,17 @@ public class Menu extends javax.swing.JFrame{
         jPanel2.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("jugar");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mouseSobre(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mouseNoSobre(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -135,6 +177,12 @@ public class Menu extends javax.swing.JFrame{
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mouseSobre(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mouseNoSobre(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -193,12 +241,34 @@ public class Menu extends javax.swing.JFrame{
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void mouseSobre(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseSobre
+        JLabel jL = (JLabel)evt.getSource();
+        Font fuente = jL.getFont();
+        Font nuevaFuente = new Font(fuente.getName(), Font.PLAIN, fuente.getSize()+10);
+        jL.setFont(nuevaFuente);
+       
+
+   
+    }//GEN-LAST:event_mouseSobre
+
+    private void mouseNoSobre(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mouseNoSobre
+        JLabel jL = (JLabel)evt.getSource();
+        Font fuente = jL.getFont();
+        Font nuevaFuente = new Font(fuente.getName(), Font.PLAIN, fuente.getSize()-10);
+        jL.setFont(nuevaFuente);
+    
+    }//GEN-LAST:event_mouseNoSobre
+
     
     
     // Mis variables
-    
-    
     private Controlador controlador = Controlador.getInstancia();
+    File archivo;
+    FileInputStream fis;
+    AudioStream as;
+    AudioData theData = null;
+    AudioDataStream ads;
+    
     
     // Mis metodos
     
@@ -210,8 +280,8 @@ public class Menu extends javax.swing.JFrame{
         buttonGroup1.add(jRadioButton2);
         buttonGroup1.add(jRadioButton3);
     }
-            
-   
+    
+     
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
