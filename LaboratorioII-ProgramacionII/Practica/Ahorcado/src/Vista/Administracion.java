@@ -216,6 +216,7 @@ public class Administracion extends javax.swing.JFrame{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         this.anterior.setEnabled(true);
+        this.anterior.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

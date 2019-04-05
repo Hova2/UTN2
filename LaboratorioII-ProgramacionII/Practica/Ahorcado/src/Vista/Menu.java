@@ -24,10 +24,10 @@ public class Menu extends javax.swing.JFrame{
     public Menu() {
         initComponents();
         misInit();
-        //rep = new Reproductor("Musica.wav");
+        rep = new Reproductor("Musica.wav");
         this.pausa=false;
-        //rep.play();
-        //rep.loop();
+        rep.play();
+        rep.loop();
     }
 
     /**
@@ -240,16 +240,18 @@ public class Menu extends javax.swing.JFrame{
         Principal principal = new Principal(Integer.valueOf(buttonGroup1.getSelection().getActionCommand()), this);
         principal.setVisible(true);
         this.setEnabled(false);
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         Administracion admin = new Administracion(this);
         admin.setVisible(true);
         this.setEnabled(false);
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       // rep.stop();
+        rep.stop();
         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
@@ -271,9 +273,11 @@ public class Menu extends javax.swing.JFrame{
          if(this.pausa){
             jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/prendido.png")));
             this.pausa=false;
+            rep.reanudar();
         }else{
             jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/apagado.png")));
             this.pausa=true;
+            rep.pausa();
         }
     }//GEN-LAST:event_sonido
 
@@ -281,7 +285,7 @@ public class Menu extends javax.swing.JFrame{
     
     // Mis variables
     private Controlador controlador = Controlador.getInstancia();
-    //private Reproductor rep;
+    private Reproductor rep;
     private boolean pausa;
     
 

@@ -103,5 +103,25 @@ salvar a su mujer</string>
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="Modelo.PalabraFacil">
+    <void property="ayuda">
+     <string>el chico maravilla</string>
+    </void>
+    <void property="termino">
+     <string>robin</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Modelo.PalabraNormal">
+    <void property="ayuda">
+     <string>puro west</string>
+    </void>
+    <void property="termino">
+     <string>adam west</string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>

@@ -19,7 +19,7 @@ public class FiltroLetrasNumeros extends DocumentFilter{
     public void replace(FilterBypass fb, int offset, int length, String string, AttributeSet attrs) throws BadLocationException {
         String texto = fb.getDocument().getText(0,fb.getDocument().getLength());
         texto += string;
-        if(texto.matches("^[a-zA-Z0-9]*$")){
+        if(texto.matches("^[a-zA-Z0-9[^\n]]*$")){
             super.insertString(fb, offset, string, attrs); //To change body of generated methods, choose Tools | Templates.
         }else{
         }

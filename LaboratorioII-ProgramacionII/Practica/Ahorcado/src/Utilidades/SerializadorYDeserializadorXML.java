@@ -70,9 +70,11 @@ public class SerializadorYDeserializadorXML {
                 BufferedOutputStream bos = new BufferedOutputStream(fos); 
                 this.encoder = new XMLEncoder(bos);
                 encoder.writeObject(entidad);
-                encoder.close();
+                
         } catch (FileNotFoundException ex) {
             throw new ArchivoNoEncontradoCE(this.mensajeArchivo(), ex);
+        }finally{
+            encoder.close();
         }
     }
     
