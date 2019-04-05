@@ -28,7 +28,7 @@ public class Principal extends javax.swing.JFrame{
     /**
      * Creates new form Principal
      */
-    public Principal(int dificultad) {
+    public Principal(int dificultad, javax.swing.JFrame anterior) {
         this.imagenes.add(0, "/Utilidades/7.png");
         this.imagenes.add(1, "/Utilidades/6.png");
         this.imagenes.add(2, "/Utilidades/5.png");
@@ -40,6 +40,7 @@ public class Principal extends javax.swing.JFrame{
         initComponents();
         misInit();
         this.dificultad = dificultad;
+        this.anterior = anterior;
     }
 
     /**
@@ -348,7 +349,6 @@ public class Principal extends javax.swing.JFrame{
         jPanel4.setPreferredSize(new java.awt.Dimension(316, 500));
 
         jLabel31.setFont(new java.awt.Font("Andes", 1, 75)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -393,7 +393,6 @@ public class Principal extends javax.swing.JFrame{
         jPanel9.setLayout(jPanel9Layout);
 
         jLabel32.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setText("rejugar");
         jLabel32.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -408,9 +407,8 @@ public class Principal extends javax.swing.JFrame{
         jPanel9.add(jLabel32, gridBagConstraints);
 
         jLabel33.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("salir");
+        jLabel33.setText("volver");
         jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel33MouseClicked(evt);
@@ -525,11 +523,12 @@ public class Principal extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
+        this.anterior.setEnabled(true);
         this.dispose();
     }//GEN-LAST:event_jLabel33MouseClicked
 
     private void jLabel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel32MouseClicked
-        Principal principal = new Principal(this.dificultad);
+        Principal principal = new Principal(this.dificultad, this.anterior);
         principal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel32MouseClicked
@@ -580,6 +579,7 @@ public class Principal extends javax.swing.JFrame{
     private Controlador controlador = Controlador.getInstancia();
     private ArrayList<String> imagenes = new ArrayList<>();
     private int dificultad;
+    private javax.swing.JFrame anterior;
     
     // Mis metodos
     

@@ -64,8 +64,6 @@ public class SerializadorYDeserializadorXML {
         return null;
     }
     
-    
-    
     private void persistirPrivado(ArrayList<Object> entidad) throws ArchivoNoEncontradoCE{
         try {
                 FileOutputStream fos = new FileOutputStream(archivo);
@@ -73,8 +71,8 @@ public class SerializadorYDeserializadorXML {
                 this.encoder = new XMLEncoder(bos);
                 encoder.writeObject(entidad);
                 encoder.close();
-        } catch (FileNotFoundException fileNotFound) {
-            System.out.println("ERROR: Archivo no encontrado");
+        } catch (FileNotFoundException ex) {
+            throw new ArchivoNoEncontradoCE(this.mensajeArchivo(), ex);
         }
     }
     

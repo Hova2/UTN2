@@ -20,9 +20,10 @@ public class Administracion extends javax.swing.JFrame{
     /**
      * Creates new form Principal
      */
-    public Administracion() {
+    public Administracion(javax.swing.JFrame anterior) {
         initComponents();
         misInit();
+        this.anterior = anterior;
     }
 
     /**
@@ -107,9 +108,11 @@ public class Administracion extends javax.swing.JFrame{
         jPanel2.add(jLabel2, gridBagConstraints);
 
         jRadioButton1.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 0));
         jRadioButton1.setText("Facil");
         jRadioButton1.setActionCommand("0");
         jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioButton1.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
@@ -117,9 +120,11 @@ public class Administracion extends javax.swing.JFrame{
         jPanel2.add(jRadioButton1, gridBagConstraints);
 
         jRadioButton2.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 0));
         jRadioButton2.setText("Normal");
         jRadioButton2.setActionCommand("1");
         jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioButton2.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
@@ -127,9 +132,11 @@ public class Administracion extends javax.swing.JFrame{
         jPanel2.add(jRadioButton2, gridBagConstraints);
 
         jRadioButton3.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 0));
         jRadioButton3.setText("Dificil");
         jRadioButton3.setActionCommand("2");
         jRadioButton3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioButton3.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
@@ -160,7 +167,7 @@ public class Administracion extends javax.swing.JFrame{
         jPanel2.add(jButton1, gridBagConstraints);
 
         jButton2.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
-        jButton2.setText("Salir");
+        jButton2.setText("volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -208,6 +215,7 @@ public class Administracion extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.anterior.setEnabled(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -223,6 +231,7 @@ public class Administracion extends javax.swing.JFrame{
     
     
     private Controlador controlador = Controlador.getInstancia();
+    private javax.swing.JFrame anterior;
     AbstractDocument documentoJTF;
     AbstractDocument documentoJTA;
     

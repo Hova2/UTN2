@@ -25,7 +25,7 @@ public class Menu extends javax.swing.JFrame{
         initComponents();
         misInit();
         //rep = new Reproductor("Musica.wav");
-        //this.pausa=false;
+        this.pausa=false;
         //rep.play();
         //rep.loop();
     }
@@ -51,6 +51,7 @@ public class Menu extends javax.swing.JFrame{
         jRadioButton3 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
 
@@ -63,8 +64,8 @@ public class Menu extends javax.swing.JFrame{
 
         jPanel2.setOpaque(false);
         java.awt.GridBagLayout jPanel2Layout = new java.awt.GridBagLayout();
-        jPanel2Layout.columnWidths = new int[] {0, 7, 0, 7, 0};
-        jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel2Layout.columnWidths = new int[] {0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0, 7, 0};
+        jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel2.setLayout(jPanel2Layout);
 
         jLabel1.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
@@ -83,12 +84,13 @@ public class Menu extends javax.swing.JFrame{
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 30;
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 24;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("jugar");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -103,25 +105,29 @@ public class Menu extends javax.swing.JFrame{
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 22;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jLabel2, gridBagConstraints);
 
         jRadioButton1.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 255, 0));
         jRadioButton1.setText("Facil");
         jRadioButton1.setActionCommand("0");
-        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jRadioButton1.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 24;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 22;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jRadioButton1, gridBagConstraints);
 
         jRadioButton2.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 255, 0));
         jRadioButton2.setText("Normal");
         jRadioButton2.setActionCommand("1");
-        jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jRadioButton2.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 24;
@@ -129,22 +135,24 @@ public class Menu extends javax.swing.JFrame{
         jPanel2.add(jRadioButton2, gridBagConstraints);
 
         jRadioButton3.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 255, 0));
         jRadioButton3.setText("Dificil");
         jRadioButton3.setActionCommand("2");
-        jRadioButton3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jRadioButton3.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 24;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 26;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jRadioButton3, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Andes", 1, 35)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Andes", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 0));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Nivel");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 24;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jLabel3, gridBagConstraints);
 
@@ -164,21 +172,32 @@ public class Menu extends javax.swing.JFrame{
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 34;
+        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridy = 26;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         jPanel2.add(jLabel4, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Andes", 0, 35)); // NOI18N
-        jLabel5.setText("pausa");
-        jLabel5.setToolTipText("");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel7.setFont(new java.awt.Font("Andes", 0, 30)); // NOI18N
+        jLabel7.setText("musica");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                sonido(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        jPanel2.add(jLabel7, gridBagConstraints);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/prendido.png"))); // NOI18N
+        jLabel5.setToolTipText("");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sonido(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
         jPanel2.add(jLabel5, gridBagConstraints);
 
@@ -218,14 +237,15 @@ public class Menu extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Principal principal = new Principal(Integer.valueOf(buttonGroup1.getSelection().getActionCommand()));
+        Principal principal = new Principal(Integer.valueOf(buttonGroup1.getSelection().getActionCommand()), this);
         principal.setVisible(true);
-        this.dispose();
+        this.setEnabled(false);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        Administracion admin = new Administracion();
+        Administracion admin = new Administracion(this);
         admin.setVisible(true);
+        this.setEnabled(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -247,15 +267,15 @@ public class Menu extends javax.swing.JFrame{
         jL.setFont(nuevaFuente);
     }//GEN-LAST:event_mouseNoSobre
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        if(pausa){
-            //pausa=false;
-            //rep.reanudar();
+    private void sonido(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sonido
+         if(this.pausa){
+            jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/prendido.png")));
+            this.pausa=false;
         }else{
-            //pausa=true;
-            //rep.pausa();
+            jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utilidades/apagado.png")));
+            this.pausa=true;
         }
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_sonido
 
     
     
@@ -288,6 +308,7 @@ public class Menu extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JRadioButton jRadioButton1;
